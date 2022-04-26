@@ -1,3 +1,6 @@
+// pub mod blockchain;
+// use crate::blockchain::Blockchain;
+
 use sha2::{Sha256, Digest};
 use serde::{Deserialize, Serialize};
 use serde_json::Result;
@@ -23,6 +26,7 @@ impl Block {
         }
     }
 
+    /// Genesis block
     // pub fn genesis_block(&mut self) {
     //     let genesis_block = Block {
     //         index: 0,
@@ -52,11 +56,23 @@ impl Block {
         return hash.finalize().as_slice().to_owned()
     }
 
-    // pub fn generate_next_block(block_data: String) {
-    //     let mut previous_block: Block = get_latest_block();
-    //     let mut next_index: u64 = previous_block.index + 1;
-    //     let mut timestamp: DateTime<Tz> = Utc::now();
-    //     let next_timestamp: u64 = timestamp.timestamp();
-    //     let mut next_hash: String = calculate_hash(next_index, previous_block.hash, next_timestamp, block_data);
+    // pub fn is_valid_block(new_block: Block, previous_block: Block) -> bool {
+    //     if (previous_block.index + 1 != new_block.index) {
+    //         panic!("Invalid block")
+    //         // return false
+    //     } else if (previous_block.hash != new_block.previous_hash) {
+    //         panic!("Invalid previous hash")
+    //         // return false
+    //     } else if (calculate_hash_for_block(new_block) != new_block.hash) {
+    //         println!("{:?} + {:?}", new_block.hash, calculate_hash_for_block(new_block));
+    //         println!("Invalid hash {:?}", new_block.hash);
+    //         return false
+    //     }
+
+    //     return true
+    // }
+
+    // pub fn calculate_hash_for_block(block: Block) -> Vec<u8> {
+    //     calculate_hash(block.index, block.previous_hash, block.timestamp, block.data)
     // }
 }

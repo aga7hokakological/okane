@@ -1,12 +1,14 @@
-pub mod block;
-use crate::block::Block;
+pub mod blockchain;
+use crate::blockchain::block::Block;
+// pub mod blockchain;
+// use crate::blockchain::Blockchain;
 
 
 fn main() {
 
     let mut blockchain = vec![];
 
-    /// Genesis block
+    // Genesis block
     let genesis_block: Block = Block::new(
         0, 
         String::from("816534932c2b7154836da6afc367695e6337db8a921823784c14378abed4f7d7"), 
